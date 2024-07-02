@@ -1,0 +1,802 @@
+[
+	{
+		"book_id": 1,
+		"title": "risus. Donec egestas. Aliquam",
+		"price": 726,
+		"publication_date": "Oct 22, 2021",
+		"author_id": 2,
+		"genre_id": 4
+	},
+	{
+		"book_id": 2,
+		"title": "nibh dolor, nonummy",
+		"price": 305,
+		"publication_date": "Mar 12, 2023",
+		"author_id": 19,
+		"genre_id": 5
+	},
+	{
+		"book_id": 3,
+		"title": "eu, odio. Phasellus",
+		"price": 569,
+		"publication_date": "Dec 2, 2022",
+		"author_id": 3,
+		"genre_id": 7
+	},
+	{
+		"book_id": 4,
+		"title": "commodo auctor velit. Aliquam",
+		"price": 644,
+		"publication_date": "Jul 14, 2022",
+		"author_id": 26,
+		"genre_id": 6
+	},
+	{
+		"book_id": 5,
+		"title": "lectus ante dictum mi, ac",
+		"price": 807,
+		"publication_date": "May 31, 2023",
+		"author_id": 14,
+		"genre_id": 6
+	},
+	{
+		"book_id": 6,
+		"title": "a, scelerisque sed, sapien.",
+		"price": 370,
+		"publication_date": "Aug 30, 2024",
+		"author_id": 15,
+		"genre_id": 4
+	},
+	{
+		"book_id": 7,
+		"title": "Nam tempor diam",
+		"price": 681,
+		"publication_date": "Apr 10, 2024",
+		"author_id": 5,
+		"genre_id": 2
+	},
+	{
+		"book_id": 8,
+		"title": "mollis. Integer tincidunt",
+		"price": 448,
+		"publication_date": "Jul 9, 2024",
+		"author_id": 46,
+		"genre_id": 2
+	},
+	{
+		"book_id": 9,
+		"title": "Vivamus rhoncus. Donec est.",
+		"price": 594,
+		"publication_date": "Jul 4, 2020",
+		"author_id": 12,
+		"genre_id": 8
+	},
+	{
+		"book_id": 10,
+		"title": "eros non enim commodo",
+		"price": 941,
+		"publication_date": "Jan 24, 2022",
+		"author_id": 34,
+		"genre_id": 8
+	},
+	{
+		"book_id": 11,
+		"title": "Nulla facilisi. Sed neque.",
+		"price": 985,
+		"publication_date": "Mar 7, 2024",
+		"author_id": 19,
+		"genre_id": 5
+	},
+	{
+		"book_id": 12,
+		"title": "sed pede nec",
+		"price": 713,
+		"publication_date": "Aug 25, 2023",
+		"author_id": 48,
+		"genre_id": 9
+	},
+	{
+		"book_id": 13,
+		"title": "malesuada malesuada. Integer id",
+		"price": 339,
+		"publication_date": "Jun 12, 2023",
+		"author_id": 39,
+		"genre_id": 4
+	},
+	{
+		"book_id": 14,
+		"title": "in",
+		"price": 885,
+		"publication_date": "Mar 29, 2023",
+		"author_id": 35,
+		"genre_id": 7
+	},
+	{
+		"book_id": 15,
+		"title": "in, hendrerit consectetuer,",
+		"price": 968,
+		"publication_date": "Mar 16, 2023",
+		"author_id": 25,
+		"genre_id": 6
+	},
+	{
+		"book_id": 16,
+		"title": "dolor. Nulla",
+		"price": 550,
+		"publication_date": "Dec 29, 2021",
+		"author_id": 43,
+		"genre_id": 7
+	},
+	{
+		"book_id": 17,
+		"title": "Praesent eu",
+		"price": 437,
+		"publication_date": "Jan 6, 2022",
+		"author_id": 21,
+		"genre_id": 9
+	},
+	{
+		"book_id": 18,
+		"title": "tincidunt congue turpis. In",
+		"price": 644,
+		"publication_date": "Mar 15, 2021",
+		"author_id": 23,
+		"genre_id": 4
+	},
+	{
+		"book_id": 19,
+		"title": "ullamcorper, velit in aliquet",
+		"price": 581,
+		"publication_date": "May 5, 2021",
+		"author_id": 48,
+		"genre_id": 6
+	},
+	{
+		"book_id": 20,
+		"title": "ante ipsum",
+		"price": 704,
+		"publication_date": "Nov 11, 2023",
+		"author_id": 17,
+		"genre_id": 9
+	},
+	{
+		"book_id": 21,
+		"title": "condimentum eget, volutpat",
+		"price": 157,
+		"publication_date": "May 2, 2021",
+		"author_id": 39,
+		"genre_id": 7
+	},
+	{
+		"book_id": 22,
+		"title": "pellentesque.",
+		"price": 965,
+		"publication_date": "Dec 31, 2023",
+		"author_id": 3,
+		"genre_id": 7
+	},
+	{
+		"book_id": 23,
+		"title": "luctus. Curabitur",
+		"price": 888,
+		"publication_date": "Jun 28, 2022",
+		"author_id": 30,
+		"genre_id": 10
+	},
+	{
+		"book_id": 24,
+		"title": "enim, condimentum",
+		"price": 829,
+		"publication_date": "Nov 3, 2023",
+		"author_id": 45,
+		"genre_id": 5
+	},
+	{
+		"book_id": 25,
+		"title": "malesuada fames ac",
+		"price": 958,
+		"publication_date": "Jan 17, 2021",
+		"author_id": 45,
+		"genre_id": 3
+	},
+	{
+		"book_id": 26,
+		"title": "est mauris, rhoncus",
+		"price": 675,
+		"publication_date": "May 21, 2024",
+		"author_id": 14,
+		"genre_id": 8
+	},
+	{
+		"book_id": 27,
+		"title": "nunc nulla vulputate dui,",
+		"price": 990,
+		"publication_date": "May 12, 2022",
+		"author_id": 21,
+		"genre_id": 6
+	},
+	{
+		"book_id": 28,
+		"title": "eget metus. In",
+		"price": 451,
+		"publication_date": "Dec 28, 2024",
+		"author_id": 5,
+		"genre_id": 6
+	},
+	{
+		"book_id": 29,
+		"title": "egestas.",
+		"price": 276,
+		"publication_date": "Feb 25, 2023",
+		"author_id": 2,
+		"genre_id": 4
+	},
+	{
+		"book_id": 30,
+		"title": "at auctor ullamcorper, nisl",
+		"price": 726,
+		"publication_date": "Jul 7, 2021",
+		"author_id": 8,
+		"genre_id": 3
+	},
+	{
+		"book_id": 31,
+		"title": "Aliquam adipiscing lobortis risus. In",
+		"price": 852,
+		"publication_date": "Apr 23, 2022",
+		"author_id": 20,
+		"genre_id": 3
+	},
+	{
+		"book_id": 32,
+		"title": "Suspendisse commodo tincidunt nibh. Phasellus",
+		"price": 769,
+		"publication_date": "Dec 2, 2021",
+		"author_id": 10,
+		"genre_id": 9
+	},
+	{
+		"book_id": 33,
+		"title": "sit amet, consectetuer adipiscing",
+		"price": 395,
+		"publication_date": "Oct 29, 2022",
+		"author_id": 21,
+		"genre_id": 4
+	},
+	{
+		"book_id": 34,
+		"title": "sed turpis",
+		"price": 543,
+		"publication_date": "Jun 2, 2021",
+		"author_id": 28,
+		"genre_id": 3
+	},
+	{
+		"book_id": 35,
+		"title": "Cras vehicula aliquet libero. Integer",
+		"price": 822,
+		"publication_date": "Nov 1, 2023",
+		"author_id": 19,
+		"genre_id": 1
+	},
+	{
+		"book_id": 36,
+		"title": "nec, cursus a,",
+		"price": 296,
+		"publication_date": "Mar 1, 2025",
+		"author_id": 3,
+		"genre_id": 1
+	},
+	{
+		"book_id": 37,
+		"title": "augue, eu tempor",
+		"price": 511,
+		"publication_date": "Apr 27, 2024",
+		"author_id": 17,
+		"genre_id": 7
+	},
+	{
+		"book_id": 38,
+		"title": "Phasellus at augue id",
+		"price": 179,
+		"publication_date": "May 22, 2024",
+		"author_id": 24,
+		"genre_id": 8
+	},
+	{
+		"book_id": 39,
+		"title": "at augue",
+		"price": 167,
+		"publication_date": "Mar 18, 2022",
+		"author_id": 43,
+		"genre_id": 2
+	},
+	{
+		"book_id": 40,
+		"title": "a, magna. Lorem ipsum",
+		"price": 278,
+		"publication_date": "Dec 9, 2021",
+		"author_id": 32,
+		"genre_id": 3
+	},
+	{
+		"book_id": 41,
+		"title": "interdum enim non nisi. Aenean",
+		"price": 800,
+		"publication_date": "Oct 23, 2020",
+		"author_id": 21,
+		"genre_id": 3
+	},
+	{
+		"book_id": 42,
+		"title": "viverra. Maecenas iaculis aliquet",
+		"price": 426,
+		"publication_date": "Dec 17, 2022",
+		"author_id": 38,
+		"genre_id": 3
+	},
+	{
+		"book_id": 43,
+		"title": "aliquet nec, imperdiet nec,",
+		"price": 894,
+		"publication_date": "Oct 4, 2021",
+		"author_id": 21,
+		"genre_id": 6
+	},
+	{
+		"book_id": 44,
+		"title": "massa. Suspendisse eleifend.",
+		"price": 491,
+		"publication_date": "Mar 14, 2021",
+		"author_id": 6,
+		"genre_id": 5
+	},
+	{
+		"book_id": 45,
+		"title": "eu tellus eu augue porttitor",
+		"price": 630,
+		"publication_date": "Jul 19, 2020",
+		"author_id": 9,
+		"genre_id": 4
+	},
+	{
+		"book_id": 46,
+		"title": "elementum sem, vitae aliquam eros",
+		"price": 890,
+		"publication_date": "Dec 29, 2023",
+		"author_id": 46,
+		"genre_id": 2
+	},
+	{
+		"book_id": 47,
+		"title": "fringilla purus mauris a",
+		"price": 541,
+		"publication_date": "Oct 16, 2023",
+		"author_id": 19,
+		"genre_id": 7
+	},
+	{
+		"book_id": 48,
+		"title": "purus",
+		"price": 992,
+		"publication_date": "Oct 4, 2022",
+		"author_id": 10,
+		"genre_id": 1
+	},
+	{
+		"book_id": 49,
+		"title": "adipiscing elit. Etiam laoreet, libero",
+		"price": 564,
+		"publication_date": "Oct 5, 2022",
+		"author_id": 7,
+		"genre_id": 9
+	},
+	{
+		"book_id": 50,
+		"title": "Etiam laoreet, libero et",
+		"price": 778,
+		"publication_date": "Jul 14, 2024",
+		"author_id": 49,
+		"genre_id": 7
+	},
+	{
+		"book_id": 51,
+		"title": "montes,",
+		"price": 550,
+		"publication_date": "Jul 10, 2023",
+		"author_id": 38,
+		"genre_id": 2
+	},
+	{
+		"book_id": 52,
+		"title": "ligula.",
+		"price": 262,
+		"publication_date": "Jan 4, 2022",
+		"author_id": 36,
+		"genre_id": 2
+	},
+	{
+		"book_id": 53,
+		"title": "cursus in, hendrerit consectetuer, cursus",
+		"price": 569,
+		"publication_date": "Apr 11, 2024",
+		"author_id": 40,
+		"genre_id": 6
+	},
+	{
+		"book_id": 54,
+		"title": "dui",
+		"price": 152,
+		"publication_date": "Jan 31, 2022",
+		"author_id": 47,
+		"genre_id": 5
+	},
+	{
+		"book_id": 55,
+		"title": "scelerisque neque. Nullam",
+		"price": 273,
+		"publication_date": "Apr 7, 2023",
+		"author_id": 20,
+		"genre_id": 10
+	},
+	{
+		"book_id": 56,
+		"title": "massa. Vestibulum accumsan neque",
+		"price": 569,
+		"publication_date": "Aug 24, 2024",
+		"author_id": 4,
+		"genre_id": 2
+	},
+	{
+		"book_id": 57,
+		"title": "ligula. Nullam",
+		"price": 814,
+		"publication_date": "Jul 8, 2021",
+		"author_id": 11,
+		"genre_id": 3
+	},
+	{
+		"book_id": 58,
+		"title": "egestas. Fusce aliquet",
+		"price": 548,
+		"publication_date": "Mar 25, 2021",
+		"author_id": 3,
+		"genre_id": 1
+	},
+	{
+		"book_id": 59,
+		"title": "gravida nunc sed pede.",
+		"price": 163,
+		"publication_date": "Jan 9, 2023",
+		"author_id": 46,
+		"genre_id": 3
+	},
+	{
+		"book_id": 60,
+		"title": "Cum sociis natoque",
+		"price": 350,
+		"publication_date": "Jul 2, 2023",
+		"author_id": 20,
+		"genre_id": 4
+	},
+	{
+		"book_id": 61,
+		"title": "viverra. Maecenas iaculis",
+		"price": 599,
+		"publication_date": "May 1, 2023",
+		"author_id": 20,
+		"genre_id": 3
+	},
+	{
+		"book_id": 62,
+		"title": "magna et ipsum cursus",
+		"price": 298,
+		"publication_date": "Aug 30, 2021",
+		"author_id": 50,
+		"genre_id": 2
+	},
+	{
+		"book_id": 63,
+		"title": "massa. Mauris vestibulum, neque sed",
+		"price": 460,
+		"publication_date": "Nov 16, 2020",
+		"author_id": 20,
+		"genre_id": 7
+	},
+	{
+		"book_id": 64,
+		"title": "arcu ac orci. Ut semper",
+		"price": 611,
+		"publication_date": "Oct 27, 2020",
+		"author_id": 36,
+		"genre_id": 3
+	},
+	{
+		"book_id": 65,
+		"title": "Suspendisse aliquet",
+		"price": 241,
+		"publication_date": "Aug 5, 2022",
+		"author_id": 29,
+		"genre_id": 6
+	},
+	{
+		"book_id": 66,
+		"title": "libero mauris, aliquam",
+		"price": 184,
+		"publication_date": "Sep 9, 2023",
+		"author_id": 47,
+		"genre_id": 8
+	},
+	{
+		"book_id": 67,
+		"title": "In mi pede,",
+		"price": 284,
+		"publication_date": "Jan 4, 2025",
+		"author_id": 42,
+		"genre_id": 9
+	},
+	{
+		"book_id": 68,
+		"title": "luctus. Curabitur",
+		"price": 880,
+		"publication_date": "Oct 6, 2020",
+		"author_id": 14,
+		"genre_id": 2
+	},
+	{
+		"book_id": 69,
+		"title": "ipsum dolor sit",
+		"price": 500,
+		"publication_date": "Feb 8, 2022",
+		"author_id": 45,
+		"genre_id": 9
+	},
+	{
+		"book_id": 70,
+		"title": "velit in aliquet",
+		"price": 864,
+		"publication_date": "Jun 6, 2021",
+		"author_id": 21,
+		"genre_id": 3
+	},
+	{
+		"book_id": 71,
+		"title": "Cras pellentesque. Sed",
+		"price": 835,
+		"publication_date": "Oct 23, 2023",
+		"author_id": 30,
+		"genre_id": 5
+	},
+	{
+		"book_id": 72,
+		"title": "sed pede. Cum sociis",
+		"price": 295,
+		"publication_date": "Dec 16, 2021",
+		"author_id": 42,
+		"genre_id": 4
+	},
+	{
+		"book_id": 73,
+		"title": "elit elit",
+		"price": 730,
+		"publication_date": "Oct 3, 2021",
+		"author_id": 9,
+		"genre_id": 2
+	},
+	{
+		"book_id": 74,
+		"title": "sed tortor. Integer aliquam",
+		"price": 843,
+		"publication_date": "Jul 9, 2021",
+		"author_id": 46,
+		"genre_id": 7
+	},
+	{
+		"book_id": 75,
+		"title": "nascetur ridiculus mus. Proin",
+		"price": 290,
+		"publication_date": "Sep 15, 2023",
+		"author_id": 43,
+		"genre_id": 9
+	},
+	{
+		"book_id": 76,
+		"title": "pede blandit congue. In scelerisque",
+		"price": 891,
+		"publication_date": "Mar 18, 2024",
+		"author_id": 4,
+		"genre_id": 3
+	},
+	{
+		"book_id": 77,
+		"title": "est. Mauris eu turpis.",
+		"price": 719,
+		"publication_date": "Apr 14, 2021",
+		"author_id": 13,
+		"genre_id": 2
+	},
+	{
+		"book_id": 78,
+		"title": "ipsum dolor",
+		"price": 219,
+		"publication_date": "Aug 30, 2024",
+		"author_id": 38,
+		"genre_id": 3
+	},
+	{
+		"book_id": 79,
+		"title": "risus. Morbi",
+		"price": 554,
+		"publication_date": "Jan 6, 2022",
+		"author_id": 7,
+		"genre_id": 1
+	},
+	{
+		"book_id": 80,
+		"title": "Pellentesque ut",
+		"price": 620,
+		"publication_date": "Jul 12, 2023",
+		"author_id": 30,
+		"genre_id": 1
+	},
+	{
+		"book_id": 81,
+		"title": "nec tellus. Nunc lectus",
+		"price": 772,
+		"publication_date": "May 13, 2021",
+		"author_id": 33,
+		"genre_id": 4
+	},
+	{
+		"book_id": 82,
+		"title": "malesuada fames ac",
+		"price": 428,
+		"publication_date": "Oct 15, 2024",
+		"author_id": 33,
+		"genre_id": 8
+	},
+	{
+		"book_id": 83,
+		"title": "varius. Nam porttitor scelerisque neque.",
+		"price": 588,
+		"publication_date": "Jun 9, 2022",
+		"author_id": 28,
+		"genre_id": 7
+	},
+	{
+		"book_id": 84,
+		"title": "neque. Nullam nisl.",
+		"price": 285,
+		"publication_date": "Jun 22, 2025",
+		"author_id": 10,
+		"genre_id": 9
+	},
+	{
+		"book_id": 85,
+		"title": "gravida nunc sed",
+		"price": 746,
+		"publication_date": "Jan 10, 2022",
+		"author_id": 20,
+		"genre_id": 6
+	},
+	{
+		"book_id": 86,
+		"title": "Praesent luctus. Curabitur egestas nunc",
+		"price": 259,
+		"publication_date": "Aug 18, 2024",
+		"author_id": 5,
+		"genre_id": 8
+	},
+	{
+		"book_id": 87,
+		"title": "sit amet, dapibus id, blandit",
+		"price": 928,
+		"publication_date": "Dec 6, 2021",
+		"author_id": 39,
+		"genre_id": 5
+	},
+	{
+		"book_id": 88,
+		"title": "leo. Vivamus nibh",
+		"price": 837,
+		"publication_date": "Jan 15, 2025",
+		"author_id": 32,
+		"genre_id": 5
+	},
+	{
+		"book_id": 89,
+		"title": "metus sit amet ante.",
+		"price": 609,
+		"publication_date": "Sep 14, 2022",
+		"author_id": 31,
+		"genre_id": 6
+	},
+	{
+		"book_id": 90,
+		"title": "pede, malesuada",
+		"price": 514,
+		"publication_date": "Dec 6, 2023",
+		"author_id": 19,
+		"genre_id": 3
+	},
+	{
+		"book_id": 91,
+		"title": "et, rutrum eu, ultrices",
+		"price": 136,
+		"publication_date": "Dec 1, 2024",
+		"author_id": 19,
+		"genre_id": 2
+	},
+	{
+		"book_id": 92,
+		"title": "nunc id enim. Curabitur",
+		"price": 873,
+		"publication_date": "Jul 3, 2024",
+		"author_id": 25,
+		"genre_id": 6
+	},
+	{
+		"book_id": 93,
+		"title": "Integer tincidunt",
+		"price": 444,
+		"publication_date": "Feb 23, 2025",
+		"author_id": 1,
+		"genre_id": 7
+	},
+	{
+		"book_id": 94,
+		"title": "ligula. Aenean euismod",
+		"price": 154,
+		"publication_date": "Nov 22, 2021",
+		"author_id": 9,
+		"genre_id": 9
+	},
+	{
+		"book_id": 95,
+		"title": "ipsum cursus",
+		"price": 918,
+		"publication_date": "Jul 20, 2023",
+		"author_id": 35,
+		"genre_id": 8
+	},
+	{
+		"book_id": 96,
+		"title": "nascetur ridiculus mus.",
+		"price": 818,
+		"publication_date": "Mar 31, 2024",
+		"author_id": 46,
+		"genre_id": 9
+	},
+	{
+		"book_id": 97,
+		"title": "tellus.",
+		"price": 958,
+		"publication_date": "Mar 5, 2023",
+		"author_id": 44,
+		"genre_id": 2
+	},
+	{
+		"book_id": 98,
+		"title": "ligula eu",
+		"price": 801,
+		"publication_date": "Feb 28, 2023",
+		"author_id": 10,
+		"genre_id": 9
+	},
+	{
+		"book_id": 99,
+		"title": "nibh. Aliquam ornare,",
+		"price": 860,
+		"publication_date": "Jul 31, 2024",
+		"author_id": 28,
+		"genre_id": 3
+	},
+	{
+		"book_id": 100,
+		"title": "per",
+		"price": 790,
+		"publication_date": "Mar 8, 2025",
+		"author_id": 41,
+		"genre_id": 2
+	}
+]
