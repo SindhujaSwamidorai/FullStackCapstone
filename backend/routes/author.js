@@ -6,7 +6,9 @@ module.exports = (Author) => {
 // GET all authors
 router.get('/', async (req, res) => {
   try {
-    const authors = await Author.findAll()
+    const authors = await Author.findAll({
+      order: [['name', 'ASC']]
+    })
     res.json(authors)
   } catch (err) {
     res.status(500).json({ error: err.message })

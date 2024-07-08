@@ -6,7 +6,9 @@ module.exports = (Genre) => {
 // GET all Genres
 router.get('/', async (req, res) => {
   try {
-    const genres = await Genre.findAll()
+    const genres = await Genre.findAll({
+      order: [['genre_name', 'ASC']]
+    })
     res.json(genres)
   } catch (err) {
     res.status(500).json({ error: err.message })
