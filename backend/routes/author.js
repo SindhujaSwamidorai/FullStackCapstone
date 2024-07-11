@@ -33,16 +33,29 @@ router.get('/:author_id', async (req, res) => {
 router.put('/:author_id', async (req, res) => {
   try {
     const author = await Author.findByPk(req.params.author_id);
+    let save=true;
     if (author){
-      if('biography' in req.body) {
-        author.biography = req.body.biography;
+      Object.keys(req.body).map((key) => {
+        switch(key) {
+          case 'biography': 
+          author.biography = req.body.biography;
+          break;
+          case 'name':
+            author.name = req.body.name;
+            break;
+            case 'author_id':
+              break;
+            default:
+              save=false; 
+              res.status(406).json({ error: 'Invalid parameters' })
+        }
+      })
+      if(save) {
         author.save();
-        res.json(author);
+        res.json(author);  
       }
-      else {
-        res.status(406).json({ error: 'Invalid parameters' })
-      }
-    } else {
+    }
+    else {
       res.status(404).json({ error: 'Author with given details not found' })
     }
   }

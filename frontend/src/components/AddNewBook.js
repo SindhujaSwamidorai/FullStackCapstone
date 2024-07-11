@@ -13,8 +13,6 @@ export default function AddNewBook() {
     const navigate = useNavigate();
     
     function handleSubmit(event) {
-
-
         let formData = event.target;
     
         let valid = true;
@@ -53,11 +51,11 @@ export default function AddNewBook() {
         {
         let newBook = {};
     
-        newBook.authorId = formData["authors"].value;;
-        newBook.genre = formData["genres"].value;
+        newBook.author_id = formData["authors"].value;
+        newBook.genre_id = formData["genres"].value;
         newBook.title = formData["title"].value;
         newBook.price = formData["price"].value;
-        newBook.publicationDate = formData["publicationDate"].value;
+        newBook.publication_date = formData["publicationDate"].value;
         
         console.log(newBook);
         console.log(JSON.stringify(newBook));
@@ -90,7 +88,7 @@ export default function AddNewBook() {
      onChange={(e) => e.target.checkValidity()}>
     <Form.Group>
     <Form.Label>Choose an author:</Form.Label>
-    <Form.Select type="number" name="authors" id="authors" required>
+    <Form.Select name="authors" id="authors" required>
         <option value="" key="select">Select an author</option>    
         <LoadAuthors></LoadAuthors>
     </Form.Select>

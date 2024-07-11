@@ -10,8 +10,10 @@ router.get('/', async (req, res) => {
   console.log(params);
   let whereClause = {};
   let sortOrder = [];
+  let attributesData = [];
   try {
     //console.log('Printing request: ', req);
+
     if('start' in params) {
         whereClause['title'] = {[Op.like]: `${params.start}%`};
     }
@@ -38,22 +40,28 @@ router.get('/', async (req, res) => {
     console.log(whereClause.length);
     sortOrder.push(['title', 'ASC']);
 
-    if(Object.keys(whereClause).length > 0){
-    const books = await Book.findAll({
-          where: whereClause,
-          order: sortOrder,
-          limit: params.limit? parseInt(params.limit): 100
-        })
-        res.json(books)
-      }
-    else {
-      const books = await Book.findAll({
-        order: sortOrder,
-        limit: params.limit? parseInt(params.limit): 100
-      }) 
-      res.json(books)     
+    let sqlData = "";
+    if('count' in params) {
+        attributesData.push([sequelize.fn('COUNT', sequelize.col('*')), 'count']);
     }
 
+    console.log(attributesData.length, attributesData);
+
+    let queryData = {};
+    if(Object.keys(whereClause).length > 0) {
+        queryData.where = whereClause;
+    }
+    if (sortOrder.length > 0) {
+        queryData.order = sortOrder;
+    }
+    queryData.limit = params.limit? parseInt(params.limit): 100;
+    
+    if(attributesData.length > 0) {
+      queryData.attributes = attributesData;
+    }
+    const books = await Book.findAll(queryData)
+        res.json(books)
+      
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
@@ -85,6 +93,7 @@ router.get('/:book_id', async (req, res) => {
 router.put('/:book_id', async (req, res) => {
   try {
     const book = await Book.findByPk(req.params.book_id);
+    //console.log("Received:", req.body, book);
     if (book){
       if('price' in req.body) {
         book.price = req.body.price;

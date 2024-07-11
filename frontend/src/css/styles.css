@@ -6,3 +6,25 @@ footer
     width: 100%;
     text-align: center;
 }
+
+.row1, .row2, .row3 , .row4 {
+    height: 150px;
+}
+
+.App {
+    background-color: beige;
+    height: 800px;
+    width: 100%;
+}
+
+.firstCol {
+    background-color:peachpuff;
+    height: 800px;
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+

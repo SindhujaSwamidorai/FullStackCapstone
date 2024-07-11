@@ -3,19 +3,55 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import { Navigate, useNavigate } from 'react-router';
-import InputGroup from 'react-bootstrap/InputGroup';
+import { useNavigate } from 'react-router';
+import { useState } from 'react';
 
 export default function AddNewAuthor() {
 
-const navigate = useNavigate();
-
+    const [validated, setValidated] = useState(false);
+    const navigate = useNavigate();
+    
+    const handleSubmit = (event) => {
+    
+        const formData = event.currentTarget;
+        if (formData.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+      else {
+    
+        console.log("Entering add author");
+        let newAuthor = {};
+        newAuthor.name = formData['name'].value;
+        newAuthor.biography = formData['biography'].value;
+    
+        console.log(newAuthor);
+        console.log(JSON.stringify(newAuthor));
+        
+        
+        fetch(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/authors`, {
+           method: "POST",
+           body: JSON.stringify(newAuthor),
+           headers: { "Content-type": "application/json; charset = UTF-8" }
+           })
+         .then(response => response.json())
+         .then(data => {
+            alert('Added new author!'); 
+           })
+          .catch(error => {
+                alert('ERROR!!!'); 
+            })
+        
+        }
+        setValidated(true);
+    }
+    
 return (
     <Container>
     <Row className='justify-content-center'>
     <Col xs md lg={6}>
     <h4> Add New Author </h4>
-    <Form id="newAuthorForm">
+    <Form id="newAuthorForm" noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group>
         <Form.Label>Name</Form.Label>    
         <Form.Control type="text" id="name" required name="name"/>
@@ -25,7 +61,7 @@ return (
         </Form.Group>
         <Form.Group>
         <Form.Label>Biography</Form.Label>
-        <Form.Control type="text" id="bio" required name="bio"/>
+        <Form.Control type="text" id="biography" required name="biography"/>
         <Form.Control.Feedback type="invalid">
         Please provide a biography.
        </Form.Control.Feedback>
