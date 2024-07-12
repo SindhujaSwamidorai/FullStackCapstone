@@ -8,13 +8,23 @@ footer
 }
 
 .row1, .row2, .row3 , .row4 {
-    height: 150px;
+    height: 200px;
 }
 
 .App {
     background-color: beige;
     height: 800px;
     width: 100%;
+}
+
+.image {
+    height: 100px;
+    width: 100px;
+}
+
+.imageBig {
+    height: 400px;
+    width: 400px;
 }
 
 .firstCol {

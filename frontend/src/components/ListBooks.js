@@ -12,6 +12,8 @@ import { useState, useReducer } from "react";
 import { LoadBookDetails } from "./BookDetails";
 import {OrbitProgress} from "react-loading-indicators";
 import AddNewBook from "./AddNewBook";
+import { Nav } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 
 export default function ListBooks() {
     const [search, setSearch] = useState(null);
@@ -110,21 +112,28 @@ export default function ListBooks() {
             let current_alpha='';
             let last_alpha='';
         return (
-            responseData.map((book) => 
+            <Nav variant='tabs'>
+            { responseData.map((book) => 
                   {
                     last_alpha = current_alpha;
                     current_alpha = book.title[0].toUpperCase();
                     return ((last_alpha !== current_alpha) && 
-                    <li key={current_alpha}>
-                        <Link onClick={handleIndex}>
-                        {"            "}{current_alpha}{"      "}
-                        </Link>
-                    </li>   
+                    <Nav.Item>
+                    <Nav.Link eventKey={current_alpha} onClick={handleIndex}>
+                        {current_alpha}
+                    </Nav.Link>   
+                    </Nav.Item>
                     ) 
                   }
-                )
+                )}
+            </Nav>
             )
         }
+/* 
+                        <Link onClick={handleIndex}>
+                        {current_alpha}
+                        </Link>
+*/
     }
 
 
@@ -186,6 +195,8 @@ export default function ListBooks() {
         <h4>Search By Index</h4>
         <ListBookTitles></ListBookTitles>
         <br/>
+        <h4>New Arrivals</h4>
+        <ListBooksByDate onClickfn = {handleDetails}></ListBooksByDate>
         </Col>
         <Col xs md lg={6}>
         { (addNew) && <AddNewBook></AddNewBook> }
@@ -193,23 +204,24 @@ export default function ListBooks() {
         <Row>
         {(search) && 
             <div>
-                List of books
+                <h4>List of books
                 {(title) && <span> with title {title} </span>} 
                 {(author) && <span> by {author}</span>}
+                </h4>
                 <ListBooksByTitleAuthor params = {{ "title" : title, "author_name" : author}} onClickfn={handleDetails}></ListBooksByTitleAuthor>
             </div>
             }
             {(alpha) && 
             <div>
-                List of books at index {alpha}
+                <h4>List of books at index {alpha}</h4>
                 <ListBooksByTitleAuthor params = {{"start" : alpha}} onClickfn={handleDetails}></ListBooksByTitleAuthor>
             </div>}
         </Row>
         </Col>
         <Col xs md lg={3}>    
-        <Button onClick={()=> {dispatch({state: true, type: "addNew"})}}> Add New Book </Button>
-        <h4>New Arrivals</h4>
-        <ListBooksByDate onClickfn = {handleDetails}></ListBooksByDate>
+        <Button onClick={()=> {dispatch({state: true, type: "addNew"})}}> {" + "} Add New Book 
+            </Button>
+            <br/> <br/>
             {(book) &&
                 <LoadBookDetails book_id={book.book_id}></LoadBookDetails>           }
         </Col>
@@ -232,11 +244,11 @@ export function ListBooksByTitleAuthor( props) {
     }
     if(responseData) {
     return (
-            <ul>
-                {responseData.map((book) => <li key={book.book_id}>
+            <ListGroup>
+                {responseData.map((book) => <ListGroup.Item key={book.book_id}>
                                             <ListBooksWithDetails book={book} onClickfn={props.onClickfn}></ListBooksWithDetails>
-                                            </li>)}
-            </ul>
+                                            </ListGroup.Item>)}
+            </ListGroup>
         )
     }
     

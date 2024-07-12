@@ -10,6 +10,8 @@ import {OrbitProgress} from "react-loading-indicators";
 import '../css/styles.css';
 import AddNewGenre from "./AddNewGenre";
 import { Button } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
+import { ListBooksWithDetails } from "./ListBooks";
 
 
 export default function ListGenres() {
@@ -55,7 +57,7 @@ export default function ListGenres() {
                         {(current_alpha !== last_alpha) && <span>{current_alpha}</span>}
                         <Col>
                         <Link onClick={() => handleGenre(genre)}>
-                            {genre.genre_name}
+                        {genre.genre_name}
                         </Link>
                         <ListCountByGenre genre_id={genre.genre_id}></ListCountByGenre>
                         </Col>
@@ -84,14 +86,12 @@ export default function ListGenres() {
         if(responseData) {
         return (
                 <div>
-                <p> List of books of genre "{genre.genre_name}" </p>
-                <ul>
-                {responseData.map((book) =>  <li key={book.book_id}>
-                                                <Link onClick={() => handleDetails(book)}>
-                                                        {book.title}
-                                                </Link>
-                                             </li>)}
-                </ul>
+                <h4> List of books of genre "{genre.genre_name}" </h4>
+                <ListGroup>
+            {responseData.map((book) => <ListGroup.Item key={book.book_id}>
+                                        <ListBooksWithDetails book={book} onClickfn={handleDetails}></ListBooksWithDetails>
+                                        </ListGroup.Item>)}
+            </ListGroup>
                 </div>
             )
         }
@@ -133,7 +133,7 @@ export default function ListGenres() {
             { (addNew) && <AddNewGenre></AddNewGenre> }
         </Col>
         <Col xs md lg={3}>    
-        <Button onClick={()=> {setAddNew(true); setBook(null); setGenre(null)}}> Add New Genre </Button>
+        <Button onClick={()=> {setAddNew(true); setBook(null); setGenre(null)}}> {" + "} Add New Genre </Button>
                 {(book) &&
                 <LoadBookDetails book_id={book.book_id}></LoadBookDetails>           }
         </Col>

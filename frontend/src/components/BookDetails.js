@@ -1,4 +1,4 @@
-import { Form } from 'react-bootstrap';
+import { Form, ListGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate, useParams } from "react-router-dom";
@@ -9,10 +9,12 @@ import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 
-export default function BookDetails() {
-    const {book_id} = useParams();
+export default function BookDetails(props) {
+    const book_id = props.book_id;
+    //const {book_id} = useParams();
     const [book, setBook] = useState(null);
     const [edit, setEdit] = useState(false);
+    const [show, setShow] = useState(props.show);
 
     const navigate = useNavigate();
 
@@ -82,7 +84,7 @@ export default function BookDetails() {
         const date= new Date(responseData.publication_date);
         const months = ["January", "February", "March", "April", "May", "June", 
                         "July", "August", "September", "October", "November", "December"];
-    return (
+    /* return (
                 <Container>
                 <Row>
                 <Col xs md lg={3} className='firstCol'>
@@ -116,6 +118,41 @@ export default function BookDetails() {
                 </Row>
                 </Container>
             )
+*/
+
+function handleClose() {
+    setShow(false);
+    props.setParentFn(false);
+}
+ return (
+                <Modal show={show} onHide={handleClose}>
+                <Form onSubmit={handleSubmit}>
+                <Modal.Header closeButton>
+                      <Modal.Title>Edit Book Details</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <Card>
+                    <Card.Text>Title: {responseData.title}</Card.Text>
+                    <Card.Text>Author: {responseData.name}</Card.Text>
+                    <Card.Text>Price: <input defaultValue={responseData.price} type='number' name='price'
+                     onChange={() => {setEdit(true)}}></input>
+                    </Card.Text>
+                    <Card.Text>Month and Year of publication: {months[date.getMonth()]}, {date.getFullYear()}</Card.Text>
+                    <Card.Text>Genre: {responseData.genre_name}</Card.Text>
+                </Card>
+                </Modal.Body>
+                <Modal.Footer className='justify-content-center'>
+                <Button type="button" onClick={()=> {if(!alert('Cancelled!')){
+                    //navigate(-1);
+                    setShow(false);
+                    props.setParentFn(false);
+                }}}>CANCEL</Button>
+                <Button type="button" value="SAVE" name="SAVE">Save Changes</Button>
+                <Button type="button" value="DELETE" name="DELETE" onClick={handleDelete}>DELETE</Button>
+                </Modal.Footer>
+                </Form>                    
+                </Modal>
+            )
 
     }
 }
@@ -125,6 +162,7 @@ export function LoadBookDetails(props) {
     console.log(props);
     //const {book_id} = useParams();
     const navigate = useNavigate();
+    const [show, setShow] = useState(false);
 
     let fetch_url = `http://localhost:${process.env.REACT_APP_SERVER_PORT}/books/${props.book_id}`;
 
@@ -145,15 +183,23 @@ export function LoadBookDetails(props) {
                         "July", "August", "September", "October", "November", "December"];
     return (
                 <Container>
-                <Card.Header> Details of Book </Card.Header>
                 <Card>
-                    <Card.Text>Title: {responseData.title} </Card.Text>
-                    <Card.Text>Author: {responseData.name}</Card.Text>
-                    <Card.Text>Genre: {responseData.genre_name}</Card.Text>
-                    <Card.Text>Month and Year of publication: {months[date.getMonth()]}, {date.getFullYear()}</Card.Text>
-                </Card>
+                <Card.Header> Details of Book </Card.Header>
+                <Card.Title> {responseData.title} </Card.Title>
+                <Card.Body>
+                    <ListGroup>
+                    <ListGroup.Item>Author: {responseData.name}</ListGroup.Item>
+                    <ListGroup.Item>Genre: {responseData.genre_name}</ListGroup.Item>
+                    <ListGroup.Item>Month and Year of publication: {months[date.getMonth()]}, {date.getFullYear()}</ListGroup.Item>
+                    </ListGroup>
+                </Card.Body>
                 <Card.Footer>Price: {responseData.price}</Card.Footer>
-                <Button type="button" className="btn btn-info" onClick={()=> navigate(`/BookDetails/${responseData.book_id}`)}> Click to update record </Button>
+                <Button type="button" className="btn btn-info" onClick={()=> {
+                    //</Container>navigate(`/BookDetails/${responseData.book_id}`)
+                    setShow(true);
+                }}> Click to update record </Button>
+                {(show) && <BookDetails book_id = {responseData.book_id} show={show} setParentFn = {setShow}></BookDetails>}
+                </Card>
                 </Container>
             )
 
