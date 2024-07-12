@@ -49,7 +49,7 @@ export default function AddNewAuthor() {
 return (
     <Container>
     <Row className='justify-content-center'>
-    <Col xs md lg={6}>
+    <Col>
     <h4> Add New Author </h4>
     <Form id="newAuthorForm" noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group>

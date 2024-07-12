@@ -11,22 +11,25 @@ import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import '../css/styles.css';
+import AddNewAuthor from "./AddNewAuthor";
 
 export default function ListAuthors() {
 
     const [author, setAuthor] = useState(null);
     const [book, setBook] = useState(null);
     const navigate = useNavigate();
-    
+    const [addNew, setAddNew] = useState(false);
 
     function handleAuthor(author) {
         console.log(author.author_id, author.name);
         setAuthor(author);
+        setAddNew(false);
     }
 
     function handleDetails(book) {
         console.log("Book Details of : ", book);
         setBook(book);
+        setAddNew(false);
     }
 
     function LoadAuthors() {
@@ -177,16 +180,20 @@ export default function ListAuthors() {
         <Container>
         <Row>
         <Col xs md lg={3} className="firstCol">
+            <div className="authors">
             <h4>Select an author</h4>
             <LoadAuthors></LoadAuthors>
+            </div>
         </Col>
         <Col xs md lg={6}>
             {
             (author) &&
             <ListBooksByAuthor author={author}></ListBooksByAuthor>
             }
+            {(addNew) && <AddNewAuthor></AddNewAuthor>}
         </Col>
-        <Col xs md lg={3}>    
+        <Col xs md lg={3}>  
+        <Button onClick={()=> {setAddNew(true); setBook(null); setAuthor(null)}}> Add New Author </Button>  
             {(book) &&
                 <LoadBookDetails book_id={book.book_id}></LoadBookDetails>           }
         </Col>

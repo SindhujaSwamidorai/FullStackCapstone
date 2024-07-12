@@ -82,7 +82,7 @@ export default function AddNewBook() {
     return (
     <Container>
     <Row className='justify-content-center'>
-    <Col xs md lg={6}>
+    <Col>
     <h4>Add New Book</h4>
     <Form id="newBookForm" noValidate onSubmit={handleSubmit} validated={validated} 
      onChange={(e) => e.target.checkValidity()}>
@@ -115,7 +115,7 @@ export default function AddNewBook() {
     </Button>{'  '}
     <Button className='col-md-2' type="button" name="CANCEL" value="CANCEL" onClick={() => {
                 alert("Cancelled!!!");
-                navigate('/');
+                //navigate(-1);
                 }}>
         CANCEL
     </Button>

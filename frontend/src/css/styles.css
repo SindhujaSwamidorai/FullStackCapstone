@@ -28,3 +28,8 @@ ul, li {
     padding: 0;
   }
 
+.authors {
+    height: 700px;
+    overflow: scroll;
+}
+

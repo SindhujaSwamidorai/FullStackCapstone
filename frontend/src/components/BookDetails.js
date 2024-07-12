@@ -7,10 +7,12 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
+import { Modal } from 'react-bootstrap';
 
 export default function BookDetails() {
     const {book_id} = useParams();
     const [book, setBook] = useState(null);
+    const [edit, setEdit] = useState(false);
 
     const navigate = useNavigate();
 
@@ -19,6 +21,7 @@ export default function BookDetails() {
         const formData = event.currentTarget;
 
         console.log(formData.price);
+        setEdit(false);
 
         let bookData = {};
         bookData.book_id = book_id;
@@ -81,29 +84,36 @@ export default function BookDetails() {
                         "July", "August", "September", "October", "November", "December"];
     return (
                 <Container>
-                <Form onSubmit={handleSubmit}>
                 <Row>
+                <Col xs md lg={3} className='firstCol'>
+                </Col>
+                <Col xs md lg={6}>
+                <Form onSubmit={handleSubmit}>
+                <Row className='justify-content-center'>
                 <Card>
                     <Card.Text>Title: {responseData.title}</Card.Text>
                     <Card.Text>Author: {responseData.name}</Card.Text>
-                    <Card.Text>Price: <input defaultValue={responseData.price} type='number' name='price'></input>
+                    <Card.Text>Price: <input defaultValue={responseData.price} type='number' name='price' readOnly={!edit}></input>
                     </Card.Text>
                     <Card.Text>Month and Year of publication: {months[date.getMonth()]}, {date.getFullYear()}</Card.Text>
                     <Card.Text>Genre: {responseData.genre_name}</Card.Text>
                 </Card>
                 </Row>
-                <Row>
-                <Col xs md lg={3}>
+                <Row className='justify-content-center'>
+                <Col xs md lg={2}>
                 <Button type="button" onClick={()=> {if(!alert('Cancelled!')){navigate(-1);}}}>CANCEL</Button>
                 </Col>
-                <Col xs md lg={6}>
-                <Button type="submit" value="SAVE" name="SAVE">Save Changes</Button>
+                <Col xs md lg={2}>
+                {(!edit) && <Button type="button" value="SAVE" name="SAVE" onClick={() => {setEdit(true)}}>Edit</Button>}
+                {(edit) && <Button type="button" value="SAVE" name="SAVE">Save Changes</Button>}
                 </Col>
-                <Col xs md lg={3}>
+                <Col xs md lg={2}>
                 <Button type="button" value="DELETE" name="DELETE" onClick={handleDelete}>DELETE</Button>
                 </Col>
                 </Row>
-                </Form>
+                </Form>                    
+                </Col>
+                </Row>
                 </Container>
             )
 
@@ -150,3 +160,4 @@ export function LoadBookDetails(props) {
     }
 }
 }
+

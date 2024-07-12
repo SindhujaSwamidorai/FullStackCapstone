@@ -8,20 +8,25 @@ import { useState } from "react";
 import { LoadBookDetails } from "./BookDetails";
 import {OrbitProgress} from "react-loading-indicators";
 import '../css/styles.css';
+import AddNewGenre from "./AddNewGenre";
+import { Button } from "react-bootstrap";
 
 
 export default function ListGenres() {
     const [genre, setGenre] = useState(null);
     const [book, setBook] = useState(null);
+    const [addNew, setAddNew] = useState(false);
 
     function handleGenre(genre) {
         console.log(genre);
-        setGenre(genre.genre_id);
+        setGenre(genre);
+        setAddNew(false);
     }
 
     function handleDetails(book) {
         console.log("Book Details of : ", book);
         setBook(book);
+        setAddNew(false);
     }
 
     function LoadGenres() {
@@ -38,14 +43,23 @@ export default function ListGenres() {
             return "loading..."
         }
         if(responseData) {
+            let current_alpha='';
+            let last_alpha='';
         return (
                 responseData.map((genre) => { 
+                    last_alpha = current_alpha;
+                    current_alpha = genre.genre_name[0]; 
                     return (
                     <li key={genre.genre_id}>
+                        <Row>
+                        {(current_alpha !== last_alpha) && <span>{current_alpha}</span>}
+                        <Col>
                         <Link onClick={() => handleGenre(genre)}>
                             {genre.genre_name}
                         </Link>
                         <ListCountByGenre genre_id={genre.genre_id}></ListCountByGenre>
+                        </Col>
+                        </Row>
                     </li>)})
             )
         }
@@ -69,6 +83,8 @@ export default function ListGenres() {
         }
         if(responseData) {
         return (
+                <div>
+                <p> List of books of genre "{genre.genre_name}" </p>
                 <ul>
                 {responseData.map((book) =>  <li key={book.book_id}>
                                                 <Link onClick={() => handleDetails(book)}>
@@ -76,6 +92,7 @@ export default function ListGenres() {
                                                 </Link>
                                              </li>)}
                 </ul>
+                </div>
             )
         }
     }
@@ -111,11 +128,13 @@ export default function ListGenres() {
         <Col xs md lg={6}>
             {
             (genre) && 
-            <ListBooksByGenre genre_id={genre}></ListBooksByGenre>
+            <ListBooksByGenre genre_id={genre.genre_id}></ListBooksByGenre>
             }
+            { (addNew) && <AddNewGenre></AddNewGenre> }
         </Col>
         <Col xs md lg={3}>    
-            {(book) &&
+        <Button onClick={()=> {setAddNew(true); setBook(null); setGenre(null)}}> Add New Genre </Button>
+                {(book) &&
                 <LoadBookDetails book_id={book.book_id}></LoadBookDetails>           }
         </Col>
         </Row>
