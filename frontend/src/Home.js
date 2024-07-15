@@ -21,19 +21,19 @@ export default function Home () {
               <Carousel.Item>
                 <img src={imageBook} alt={"window"} className="imageBig"></img>
                 <Carousel.Caption>
-                <h3>View, Update, Add or Delete books and authors easily</h3>
+                <p>View, Update, Add or Delete books and authors easily</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img src={imageAuthor} alt={"window"} className="imageBig"></img>
                 <Carousel.Caption>
-                <h3>Find books by author, title or genre</h3>
+                <p>Find books by author, title or genre</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img src={imageGenre} alt={"window"} className="imageBig"></img>
                 <Carousel.Caption>
-                <h3>Organize your book store with this easy to use interface</h3>
+                <p>Organize your book store with this easy to use interface</p>
                 </Carousel.Caption>
             </Carousel.Item>
             </Carousel>

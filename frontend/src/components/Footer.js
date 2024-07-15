@@ -5,7 +5,7 @@ export default function CustomFooter()
     return (
     <footer>         
         <div>
-        copyright@2024 by MyBookStore 
+        copyright@2024 by WonderBooks 
         </div>
     </footer>
     )

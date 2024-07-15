@@ -23,8 +23,8 @@ footer
 }
 
 .imageBig {
-    height: 600px;
-    width: 800px;
+    height: 500px;
+    width: 700px;
 }
 
 .firstCol {
@@ -37,12 +37,18 @@ ul, li {
     margin: 0;
     padding: 0;
   }
-
-.authors {
+ 
+.firstCol {
     height: 700px;
     overflow: scroll;
 }
 
 .home {
     background-color: peachpuff;
+}
+
+div > .update-btn {
+    background-color: transparent;
+    color: indigo;
+    border-color: transparent;
 }

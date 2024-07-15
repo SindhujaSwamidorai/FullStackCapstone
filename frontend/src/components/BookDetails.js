@@ -174,7 +174,7 @@ export function LoadBookDetails(props) {
                     </ListGroup>
                 </Card.Body>
                 <Card.Footer>Price: {(book) ? book.price: responseData.price}</Card.Footer>
-                <Button type="button" className="btn btn-info" onClick={()=> {
+                <Button type="button" className="update-btn" onClick={()=> {
                     //</Container>navigate(`/BookDetails/${responseData.book_id}`)
                     setShow(true);
                 }}> Click to update record </Button>

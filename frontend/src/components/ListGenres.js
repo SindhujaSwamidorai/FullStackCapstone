@@ -135,6 +135,7 @@ export default function ListGenres() {
         </Col>
         <Col xs md lg={3}>    
         <Button onClick={()=> {setAddNew(true); setBook(null); setGenre(null)}}> {" + "} Add New Genre </Button>
+        <br/><br/>
                 {(book) &&
                 <LoadBookDetails book_id={book.book_id}></LoadBookDetails>           }
         </Col>
