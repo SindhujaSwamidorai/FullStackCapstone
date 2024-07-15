@@ -206,8 +206,8 @@ export default function ListBooks() {
         {(search) && 
             <div>
                 <h4>List of books
-                {(title) && <span> with title {title} </span>} 
-                {(author) && <span> by {author}</span>}
+                {(title) && <span> with title containing "{title}" </span>} 
+                {(author) && <span> <br/> by author "...{author}..." </span>}
                 </h4>
                 <ListBooksByTitleAuthor params = {{ "title" : title, "author_name" : author}} onClickfn={handleDetails}></ListBooksByTitleAuthor>
             </div>

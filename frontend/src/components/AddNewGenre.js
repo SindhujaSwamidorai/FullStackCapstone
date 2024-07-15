@@ -33,13 +33,14 @@ const handleSubmit = (event) => {
        body: JSON.stringify(newGenre),
        headers: { "Content-type": "application/json; charset = UTF-8" }
        })
-     .then(response => { 
-        const data = response.json();
-        if(Object.keys(data).length > 0) {
-            alert('Added new genre!', data);
-          } 
-          else {
-            alert(`Invalid data! + ${response.status}`)
+       .then(response => response.json())
+       .then(data => {
+
+        if('genre_name' in data) {
+                alert('Added new genre!', data);
+        } 
+        else {
+            alert(`Genre not added! ${data['error']}`)
         }
        })
       .catch(error => {

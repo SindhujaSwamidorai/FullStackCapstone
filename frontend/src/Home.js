@@ -41,18 +41,6 @@ export default function Home () {
             <Col xs md lg={2} className="col3">
             </Col>
             </Row>
-            <Row className="row2">
-            <Col xs md lg={2} className="col1">
-            </Col>
-            <Col xs md lg={8} className="col2">
-            </Col>
-            <Col xs md lg={2} className="col3">
-            </Col>
-            </Row>
-            <Row className="row3">
-            </Row>
-            <Row className="row4">
-            </Row>
         </div>
     )
 }

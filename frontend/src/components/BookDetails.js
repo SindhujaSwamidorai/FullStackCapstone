@@ -1,11 +1,9 @@
-import { Form, ListGroup } from 'react-bootstrap';
+import { Alert, Form, ListGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import useFetch from '../hooks/useFetch';
 import Container from 'react-bootstrap/esm/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 
@@ -24,6 +22,7 @@ export default function BookDetails(props) {
         //setResponseData(data);
         setBook(responseData);
     },[responseData]);
+    
 
     //console.log(responseData, loading, error);
     if(error) {
@@ -79,7 +78,11 @@ export default function BookDetails(props) {
             method: "DELETE",
             })
           .then(data => {
-            if(!alert(`Deleted Book ${book.title}!`)){navigate(-1);}
+            if(!alert(`Deleted Book ${book.title}!`)){
+                setShow(false); 
+                setBook(null);
+                props.setDataFn(null);
+                }
             })
             .catch(error => {
                  alert(`ERROR Deleting Book ${book.title}!!!` + error); 
@@ -111,7 +114,7 @@ export default function BookDetails(props) {
                 </Card>
                 </Modal.Body>
                 <Modal.Footer className='justify-content-center'>
-                <Button type="button" onClick={()=> {if(!alert('Cancelled!')){
+                <Button type="button" onClick={()=> {if(!alert('Cancelling changes!')){
                     //navigate(-1);
                     setShow(false);
                     props.setParentFn(false);
@@ -133,18 +136,19 @@ export function LoadBookDetails(props) {
     //const {book_id} = useParams();
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
-    const [data, setData] = useState(null);
+    //const [data, setData] = useState(null);
+    const [book, setBook] = useState(null);
 
     let fetch_url = `http://localhost:${process.env.REACT_APP_SERVER_PORT}/books/${props.book_id}`;
 
     const {responseData, loading, error } = useFetch(fetch_url);
 
     useEffect(() => {
-        setData(responseData);
+        setBook(responseData);
     },[responseData])
 
     if(error) {
-        return <div>error!! {error.message}</div>
+        return <Alert>error!! {error.message}</Alert>
     }
 
     if (loading) {
@@ -157,6 +161,7 @@ export function LoadBookDetails(props) {
         const months = ["January", "February", "March", "April", "May", "June", 
                         "July", "August", "September", "October", "November", "December"];
     return (
+                (book) && 
                 <Container>
                 <Card>
                 <Card.Header> Details of Book </Card.Header>
@@ -168,12 +173,12 @@ export function LoadBookDetails(props) {
                     <ListGroup.Item>Month and Year of publication: {months[date.getMonth()]}, {date.getFullYear()}</ListGroup.Item>
                     </ListGroup>
                 </Card.Body>
-                <Card.Footer>Price: {(data) ? data.price: responseData.price}</Card.Footer>
+                <Card.Footer>Price: {(book) ? book.price: responseData.price}</Card.Footer>
                 <Button type="button" className="btn btn-info" onClick={()=> {
                     //</Container>navigate(`/BookDetails/${responseData.book_id}`)
                     setShow(true);
                 }}> Click to update record </Button>
-                {(show) && <BookDetails book_id = {responseData.book_id} show={show} setParentFn = {setShow} setDataFn = {setData}></BookDetails>}
+                {(show) && <BookDetails book_id = {responseData.book_id} show={show} setParentFn = {setShow} setDataFn = {setBook}></BookDetails>}
                 </Card>
                 </Container>
             )
