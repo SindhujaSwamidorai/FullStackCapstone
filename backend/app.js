@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 // Initialize Sequelize
-const sequelize = new Sequelize('test_db', 'root', 'password', {
+const sequelize = new Sequelize('book_store', 'root', 'password', {
   host: 'localhost',
   dialect: 'mysql'
 })
@@ -37,9 +37,9 @@ Book.belongsTo(Genre, {as: 'Genre', foreignKey: 'genre_id'});
 
 // Sync models
 sequelize.sync(
-  /*{force: true}*/)
+  {force: true})
   .then(() => {
-    //seed.insert(Book, Author, Genre);
+    seed.insert(Book, Author, Genre);
     console.log('Models synchronized successfully.')
   })
   .catch(err => {
