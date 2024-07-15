@@ -4,8 +4,8 @@ Setting up the project
 The book store project clone from:
 https://github.com/sindhuja-swamidorai/FullStackCapstone
 
-Open a local MySQL server connection and create a database named test_db.
-CREATE DATABASE test_db;
+Open a local MySQL server connection and create a database named book_store.
+CREATE DATABASE book_store;
 
 
 After you clone this repository to your local computer, change directories (cd) into the newly cloned project folder and Install the projects dependencies with NPM for backend and frontend separately.
