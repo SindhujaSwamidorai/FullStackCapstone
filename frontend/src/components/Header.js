@@ -14,7 +14,7 @@ export default function CustomHeader() {
       <Container fluid>
       <Navbar.Brand href="#home">
       <img src={logo} height={50} width={50}></img>
-        {" "} MyBookStore</Navbar.Brand>
+        {" "} WonderBooks</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>

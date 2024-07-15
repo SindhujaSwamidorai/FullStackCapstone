@@ -114,10 +114,10 @@ export default function AddNewBook() {
         ADD
     </Button>{'  '}
     <Button className='col-md-2' type="button" name="CANCEL" value="CANCEL" onClick={() => {
-                alert("Cancelled!!!");
-                //navigate(-1);
-                }}>
-        CANCEL
+            if(!alert("Cancelled!!!")){
+                navigate(-1);
+            }}}>
+    CANCEL
     </Button>
     </Form>
     </Col>

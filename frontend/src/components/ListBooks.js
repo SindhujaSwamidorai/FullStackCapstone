@@ -14,6 +14,7 @@ import {OrbitProgress} from "react-loading-indicators";
 import AddNewBook from "./AddNewBook";
 import { Nav } from 'react-bootstrap';
 import { ListGroup } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 
 export default function ListBooks() {
     const [search, setSearch] = useState(null);
@@ -101,7 +102,7 @@ export default function ListBooks() {
         const {responseData,loading, error } = useFetch(fetch_url);
     
         if(error) {
-            return "error!!"
+            return <Alert>Server Error: {error.message} </Alert>
         }
     
         if (loading) {
@@ -236,7 +237,7 @@ export function ListBooksByTitleAuthor( props) {
     const {responseData, loading, error } = useFetch(fetch_url, props.params);
 
     if(error) {
-        return "error!!"
+        return <Alert>"error!!" {error} </Alert>
     }
 
     if (loading) {
@@ -275,7 +276,7 @@ export function ListBooksByDate(props) {
     const {responseData, loading, error } = useFetch(fetch_url);
 
     if(error) {
-        return "error!!"
+        return "Unavailable";
     }
 
     if (loading) {

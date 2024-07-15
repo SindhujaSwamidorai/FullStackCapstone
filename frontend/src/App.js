@@ -24,7 +24,7 @@ function App() {
           <Route path="/ListAuthors" element={<ListAuthors />} />
           <Route path="/AddBook" element={<AddNewBook />} />
           <Route path="/AddAuthor" element={<AddNewAuthor />} />
-          <Route path="/AddGenre" element={<AddNewGenre />} />
+          <Route path="/AddGenre" element={<AddNewGenre/>} />
           <Route path="/BookDetails/:book_id" element={<BookDetails/>} />
         </Routes>
       </main>

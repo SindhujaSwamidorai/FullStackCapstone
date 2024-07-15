@@ -32,8 +32,20 @@ router.get('/:genre_id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const genre = await Genre.create(req.body);
-        res.status(201).json(genre);
+        if("genre_name" in req.body) {
+        const genre = await Genre.findOne({
+          where: {genre_name: req.body.genre_name}
+        })
+        if (!genre){
+            const genre_new = Genre.create(req.body);
+            res.status(201).json(genre_new);
+          }else {
+            res.status(500).json({ error: "Genre already exists" })
+         }
+        }
+        else {
+          res.status(500).json({ error: "Invalid input" })
+        }
         //console.log(JSON.stringify(req.body));
     }
     catch (err) {

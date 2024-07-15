@@ -12,6 +12,7 @@ import AddNewGenre from "./AddNewGenre";
 import { Button } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import { ListBooksWithDetails } from "./ListBooks";
+import { Alert } from "react-bootstrap";
 
 
 export default function ListGenres() {
@@ -38,7 +39,7 @@ export default function ListGenres() {
     
         //console.log(responseData, loading, error);
         if(error) {
-            return "error!!"
+            return <Alert>Server Error: {error.message} </Alert>
         }
     
         if (loading) {
@@ -107,7 +108,7 @@ export default function ListGenres() {
     
         //console.log(responseData, loading, error);
         if(error) {
-            return "error!!"
+            return <Alert>Server Error: {error.message} </Alert>
         }
     
         if (loading) {

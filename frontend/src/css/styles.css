@@ -8,7 +8,7 @@ footer
 }
 
 .row1, .row2, .row3 , .row4 {
-    height: 200px;
+    height: 400px;
 }
 
 .App {
@@ -23,8 +23,8 @@ footer
 }
 
 .imageBig {
-    height: 400px;
-    width: 400px;
+    height: 600px;
+    width: 800px;
 }
 
 .firstCol {
@@ -43,3 +43,6 @@ ul, li {
     overflow: scroll;
 }
 
+.home {
+    background-color: peachpuff;
+}

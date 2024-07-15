@@ -43,7 +43,7 @@ export default function ListAuthors() {
     
         //console.log(responseData, loading, error);
         if(error) {
-            return "error!!"
+            return <Alert>Server Error: {error.message} </Alert>
         }
     
         if (loading) {

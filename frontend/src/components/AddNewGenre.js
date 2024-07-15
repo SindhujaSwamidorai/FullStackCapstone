@@ -14,8 +14,8 @@ const navigate = useNavigate();
 const handleSubmit = (event) => {
 
     const formData = event.currentTarget;
-      if (formData.checkValidity() === false) {
-        event.preventDefault();
+    event.preventDefault();
+    if (formData.checkValidity() === false) {
         event.stopPropagation();
     }
   else {
@@ -33,14 +33,18 @@ const handleSubmit = (event) => {
        body: JSON.stringify(newGenre),
        headers: { "Content-type": "application/json; charset = UTF-8" }
        })
-     .then(response => response.json())
-     .then(data => {
-        alert('Added new genre!'); 
+     .then(response => { 
+        const data = response.json();
+        if(Object.keys(data).length > 0) {
+            alert('Added new genre!', data);
+          } 
+          else {
+            alert(`Invalid data! + ${response.status}`)
+        }
        })
       .catch(error => {
-            alert('ERROR!!!'); 
+        alert(`Server Error! ${error}`); 
         })
-    
     }
     setValidated(true);
 }
@@ -63,9 +67,9 @@ return (
            ADD
         </Button>{'  '}
         <Button className='col-md-2' type="button" name="CANCEL" value="CANCEL" onClick={() => {
-            alert("Cancelled!!!");
-            navigate('/');
-            }}>
+            if(!alert("Cancelled!!!")){
+                navigate(-1);
+            }}}>
            CANCEL
         </Button>
     </Form>   

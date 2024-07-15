@@ -9,10 +9,11 @@ export default function useFetch (url, params) {
 
     if(params){
         console.log(params);
+        fetch_url += '?';
         Object.keys(params).map((x) => {
             const y = params[x];
             if (y) {
-               fetch_url += `?${x}=${y}`
+               fetch_url += `${x}=${y}&`
             }
         })
     }
