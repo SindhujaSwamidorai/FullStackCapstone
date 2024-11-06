@@ -1,8 +1,7 @@
 This project contains two sections, backend and frontend implementation, to create a full-stack application that allows bookstore employees to internally manage the books carried by a small bookstore.
 
 Setting up the project
-The book store project clone from:
-https://github.com/sindhuja-swamidorai/FullStackCapstone
+Clone this project to your local repository
 
 Open a local MySQL server connection and create a database named book_store.
 CREATE DATABASE book_store;
